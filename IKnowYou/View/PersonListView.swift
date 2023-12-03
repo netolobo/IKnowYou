@@ -7,12 +7,18 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct PersonListView: View {
+    
+    @State private var viewModel = PersonListViewModel()
     
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Hello!")
+                ForEach(viewModel.people.sorted()) { person in
+                    HStack(spacing: 20) {
+                        Text(person.name)
+                    }
+                }
             }
             .navigationTitle("IKnowYou!")
             .toolbar {
@@ -28,5 +34,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    PersonListView()
 }

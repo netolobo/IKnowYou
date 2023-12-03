@@ -9,39 +9,44 @@ import SwiftUI
 
 struct AddNewPersonView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var showingImagePicker = true
+    @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var image: Image?
     @State private var personName = ""
     
     var body: some View {
-            VStack {
-                image?
-                    .resizable()
-                    .scaledToFit()
-                
-                TextField("Type a name", text: $personName)
-                
+        VStack(spacing: 20) {
+            image?
+                .resizable()
+                .scaledToFit()
+            
+            TextField("Type a name", text: $personName)
+            
+            Button {
+                //TODO: save new contact
+                dismiss()
+            } label: {
+                Text("Done")
+                    .fontWeight(.bold)
+                    .padding()
+                    .background(.blue)
+                    .foregroundStyle(.white)
+                    .clipShape(Capsule())
             }
-            .toolbar {
-                Button {
-                    //TODO: save new contact
-                    dismiss()
-                } label: {
-                    Text("Done")
-                }
-            }
-            .onChange(of: inputImage) { loadImage() }
-            .sheet(isPresented: $showingImagePicker, content: {
-                ImagePicker(image: $inputImage)
-            })
+            
+        }
+        .onChange(of: inputImage) { loadImage() }
+        .sheet(isPresented: $showingImagePicker, content: {
+            ImagePicker(image: $inputImage)
+        })
+        .padding(.horizontal, 20)
     }
     
     func loadImage() {
         guard let wrappeImage = inputImage else { return }
         image = Image(uiImage: wrappeImage)
     }
-
+    
 }
 
 #Preview {

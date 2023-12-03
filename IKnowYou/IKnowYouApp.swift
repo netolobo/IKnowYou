@@ -11,7 +11,7 @@ import SwiftUI
 struct IKnowYouApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PersonListView()
         }
     }
 }
