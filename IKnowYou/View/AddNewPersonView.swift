@@ -9,22 +9,28 @@ import SwiftUI
 
 struct AddNewPersonView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var showingImagePicker = false
-    @State private var inputImage: UIImage?
-    @State private var image: Image?
-    @State private var personName = ""
+    @State private var viewModel = AddNewPersonViewModel()
+    @Binding var people: [Person]
     
     var body: some View {
         VStack(spacing: 20) {
-            image?
+            viewModel.image?
                 .resizable()
                 .scaledToFit()
             
-            TextField("Type a name", text: $personName)
+            TextField("Type a name", text: $viewModel.personName)
             
             Button {
-                //TODO: save new contact
+                guard let imageData = viewModel.inputImage?.jpegData(compressionQuality: 0.8) else {
+                    return
+                }
+                
+                let newPerson = Person(id: UUID(), name: viewModel.personName, image: imageData)
+                
+                people.append(newPerson)
+                
                 dismiss()
+                
             } label: {
                 Text("Done")
                     .fontWeight(.bold)
@@ -35,23 +41,30 @@ struct AddNewPersonView: View {
             }
             
         }
-        .onChange(of: inputImage) { loadImage() }
-        .sheet(isPresented: $showingImagePicker, content: {
-            ImagePicker(image: $inputImage)
+        .onChange(of: viewModel.inputImage) { viewModel.loadImage() }
+        .sheet(isPresented: $viewModel.showingImagePicker, content: {
+            ImagePicker(image: $viewModel.inputImage)
         })
         .padding(.horizontal, 20)
     }
     
-    func loadImage() {
-        guard let wrappeImage = inputImage else { return }
-        image = Image(uiImage: wrappeImage)
+    func addPerson(newPerson: Person) {
+        people.append(newPerson)
     }
+    
+//    func updatePerson(person: Person) {
+//        guard let selectedPerson = viewModel.se else { return }
+//        
+//        if let index = people.firstIndex(of: selectedPerson) {
+//            people[index] = person
+//        }
+//    }
     
 }
 
 #Preview {
     NavigationStack {
-        AddNewPersonView()
+        AddNewPersonView(people: .constant([]))
     }
     
 }
