@@ -15,18 +15,23 @@ class AddNewPersonViewModel {
     var inputImage: UIImage?
     var image: Image?
     var personName = ""
+    var selectedPerson: Person?
     
     func loadImage() {
         guard let wrappeImage = inputImage else { return }
         image = Image(uiImage: wrappeImage)
     }
     
+    func updatePerson() -> Person? {
+        guard let imageData = inputImage?.jpegData(compressionQuality: 0.8) else {
+            return nil
+        }
+        
+        selectedPerson = Person(id: UUID(), name: personName, image: imageData)
+        
+        return selectedPerson
+    }
     
-//    func updatePerson(person: Person) {
-//        guard let selectedPerson = selectedPerson else { return }
-//        
-//        if let index = people.firstIndex(of: selectedPerson) {
-//            people[index] = person
-//        }
-//    }
+    
+   
 }

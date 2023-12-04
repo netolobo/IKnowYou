@@ -32,6 +32,16 @@ class PersonListViewModel {
         }
     }
     
+    func updatePerson(person: Person) {
+        guard let selectedPerson = selectedPerson else { return }
+        
+        if let index = people.firstIndex(of: selectedPerson) {
+            people[index] = person
+        }
+    }
     
+    func saveNewPerson(newPerson: Person) {
+        people.append(newPerson)
+    }
     
 }

@@ -17,6 +17,8 @@
 		5A0883FB2B1C0A3100758163 /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0883FA2B1C0A3000758163 /* PersonListViewModel.swift */; };
 		5A08841C2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08841B2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift */; };
 		5A08841E2B1D301000758163 /* AddNewPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08841D2B1D301000758163 /* AddNewPersonViewModel.swift */; };
+		5A0884202B1D808700758163 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08841F2B1D808700758163 /* PersonDetailView.swift */; };
+		5A0884222B1D80A700758163 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0884212B1D80A700758163 /* PersonDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		5A0883FA2B1C0A3000758163 /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
 		5A08841B2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		5A08841D2B1D301000758163 /* AddNewPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonViewModel.swift; sourceTree = "<group>"; };
+		5A08841F2B1D808700758163 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
+		5A0884212B1D80A700758163 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				5A0883E52B1BF4A900758163 /* PersonListView.swift */,
 				5A0883F22B1BF52F00758163 /* ImagePicker.swift */,
 				5A0883F42B1C012800758163 /* AddNewPersonView.swift */,
+				5A08841F2B1D808700758163 /* PersonDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				5A0883FA2B1C0A3000758163 /* PersonListViewModel.swift */,
 				5A08841D2B1D301000758163 /* AddNewPersonViewModel.swift */,
+				5A0884212B1D80A700758163 /* PersonDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -191,9 +197,11 @@
 				5A0883F32B1BF52F00758163 /* ImagePicker.swift in Sources */,
 				5A08841C2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift in Sources */,
 				5A0883E62B1BF4A900758163 /* PersonListView.swift in Sources */,
+				5A0884202B1D808700758163 /* PersonDetailView.swift in Sources */,
 				5A08841E2B1D301000758163 /* AddNewPersonViewModel.swift in Sources */,
 				5A0883F52B1C012800758163 /* AddNewPersonView.swift in Sources */,
 				5A0883E42B1BF4A900758163 /* IKnowYouApp.swift in Sources */,
+				5A0884222B1D80A700758163 /* PersonDetailViewModel.swift in Sources */,
 				5A0883FB2B1C0A3100758163 /* PersonListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

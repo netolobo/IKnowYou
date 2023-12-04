@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct AddNewPersonView: View {
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
     @State private var viewModel = AddNewPersonViewModel()
-    @Binding var people: [Person]
+//    @Binding var people: [Person]
+//    @State var selectedPerson: Person?
+    var saveClick: (Person) -> Void
     
     var body: some View {
         VStack(spacing: 20) {
@@ -21,14 +23,9 @@ struct AddNewPersonView: View {
             TextField("Type a name", text: $viewModel.personName)
             
             Button {
-                guard let imageData = viewModel.inputImage?.jpegData(compressionQuality: 0.8) else {
-                    return
-                }
+                guard let selectedPerson = viewModel.updatePerson() else { return }
                 
-                let newPerson = Person(id: UUID(), name: viewModel.personName, image: imageData)
-                
-                people.append(newPerson)
-                
+                saveClick(selectedPerson)
                 dismiss()
                 
             } label: {
@@ -39,7 +36,6 @@ struct AddNewPersonView: View {
                     .foregroundStyle(.white)
                     .clipShape(Capsule())
             }
-            
         }
         .onChange(of: viewModel.inputImage) { viewModel.loadImage() }
         .sheet(isPresented: $viewModel.showingImagePicker, content: {
@@ -48,9 +44,15 @@ struct AddNewPersonView: View {
         .padding(.horizontal, 20)
     }
     
-    func addPerson(newPerson: Person) {
-        people.append(newPerson)
-    }
+//    func addPerson(newPerson: Person) {
+//        guard let imageData = viewModel.inputImage?.jpegData(compressionQuality: 0.8) else {
+//            return
+//        }
+//        
+//        selectedPerson = Person(id: UUID(), name: viewModel.personName, image: imageData)
+//        
+////        people.append(newPerson)
+//    }
     
 //    func updatePerson(person: Person) {
 //        guard let selectedPerson = viewModel.se else { return }
@@ -64,7 +66,7 @@ struct AddNewPersonView: View {
 
 #Preview {
     NavigationStack {
-        AddNewPersonView(people: .constant([]))
+        AddNewPersonView(saveClick: { _ in})
     }
     
 }
