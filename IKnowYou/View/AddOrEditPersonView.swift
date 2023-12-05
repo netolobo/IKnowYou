@@ -45,6 +45,9 @@ struct AddOrEditPersonView: View {
             }
             
         }
+        .task {
+            viewModel.getUserLocation()
+        }
         .onChange(of: viewModel.inputImage) { viewModel.loadImage() }
         .sheet(isPresented: $viewModel.showingImagePicker, content: {
             ImagePicker(image: $viewModel.inputImage)

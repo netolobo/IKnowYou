@@ -5,6 +5,7 @@
 //  Created by Neto Lobo on 02/12/23.
 //
 
+import MapKit
 import SwiftUI
 
 struct PersonListView: View {
@@ -16,7 +17,7 @@ struct PersonListView: View {
             VStack(alignment: .leading) {
                 List(viewModel.people.sorted()) { person in
                     NavigationLink {
-                        PersonDetailView(viewModel: PersonDetailViewModel(person: person))
+                        PersonDetailView(viewModel: PersonDetailViewModel(person: person), mapCameraPositon: MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: person.latitude, longitude: person.longitude), span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.09))))
                     } label: {
                         HStack(spacing: 20) {
                             ImageData.from(data: person.image)

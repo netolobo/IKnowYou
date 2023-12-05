@@ -21,8 +21,6 @@ class AddOrEditPersonViewModel {
             }
             person?.image = imageData
         }
-        
-
     }
     var image: Image?
     var personName : String = "" {
@@ -32,29 +30,25 @@ class AddOrEditPersonViewModel {
     }
     var person: Person?
     
+    let locationFetcher =  LocationFetcher()
+    
     func loadImage() {
         guard let wrappeImage = inputImage else { return }
         image = Image(uiImage: wrappeImage)
     }
     
-//    func updateOrAddPerson() -> Person {
-//        
-//        if person == nil {
-//            return Person(id: UUID(), name: personName, image: person?.image)
-//        }
-//        
-//        if let wrappedPerson = person {
-//            person?.name = wrappedPerson.name
-//            person?.image = wrappedPerson.image
-//        } else {
-//            
-//        }
-//        
-//        
-//        return person
-//    }
+    func getUserLocation() {
+        if let location = self.locationFetcher.lastKnownLocation {
+            person?.latitude = location.latitude
+            person?.longitude = location.longitude
+        } else {
+            print("Your location is unknown")
+        }
+    }
+    
     
     init(person: Person? = nil) {
+        locationFetcher.start()
         
         if let person = person {
             image = ImageData.from(data: person.image)
@@ -65,6 +59,6 @@ class AddOrEditPersonViewModel {
             self.person = Person(id: UUID(), image: Data())
         }
     }
-
-   
+    
+    
 }

@@ -20,6 +20,7 @@
 		5A0884202B1D808700758163 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08841F2B1D808700758163 /* PersonDetailView.swift */; };
 		5A0884222B1D80A700758163 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0884212B1D80A700758163 /* PersonDetailViewModel.swift */; };
 		5A9333202B1E7D100094A2CF /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A93331F2B1E7D100094A2CF /* ImageData.swift */; };
+		5A9333232B1EC4D20094A2CF /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9333222B1EC4D20094A2CF /* LocationFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		5A08841F2B1D808700758163 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
 		5A0884212B1D80A700758163 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		5A93331F2B1E7D100094A2CF /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		5A9333222B1EC4D20094A2CF /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0883F72B1C096800758163 /* Person.swift */,
+				5A9333222B1EC4D20094A2CF /* LocationFetcher.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				5A0883F82B1C096800758163 /* Person.swift in Sources */,
 				5A0883F32B1BF52F00758163 /* ImagePicker.swift in Sources */,
+				5A9333232B1EC4D20094A2CF /* LocationFetcher.swift in Sources */,
 				5A08841C2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift in Sources */,
 				5A0883E62B1BF4A900758163 /* PersonListView.swift in Sources */,
 				5A0884202B1D808700758163 /* PersonDetailView.swift in Sources */,
@@ -350,6 +354,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IKnowYou/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "I need your location to put on the map where did you took the photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -378,6 +383,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IKnowYou/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "I need your location to put on the map where did you took the photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
