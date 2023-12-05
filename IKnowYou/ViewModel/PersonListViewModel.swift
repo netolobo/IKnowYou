@@ -10,7 +10,7 @@ import Foundation
 @Observable
 class PersonListViewModel {
     let savePath = FileManager.documentsDirectory.appending(path: "SavedPeople")
-    var selectedPerson: Person?
+//    var selectedPerson: Person?
     
     var people = [Person]() {
         didSet {
@@ -32,11 +32,11 @@ class PersonListViewModel {
         }
     }
     
-    func updatePerson(person: Person) {
-        guard let selectedPerson = selectedPerson else { return }
+    func updatePerson(selectedPerson: Person, updatedPerson: Person) {
+//        guard let selectedPerson = selectedPerson else { return }
         
         if let index = people.firstIndex(of: selectedPerson) {
-            people[index] = person
+            people[index] = updatedPerson
         }
     }
     

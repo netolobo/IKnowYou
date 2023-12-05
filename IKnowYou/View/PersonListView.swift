@@ -40,8 +40,8 @@ struct PersonListView: View {
                     }
                     .swipeActions(edge: .leading) {
                         NavigationLink {
-                            AddOrEditPersonView(viewModel: AddOrEditPersonViewModel(person: person)) { selectedPerson in
-                                viewModel.updatePerson(person: selectedPerson)
+                            AddOrEditPersonView(viewModel: AddOrEditPersonViewModel(person: person)) { updatedPerson in
+                                viewModel.updatePerson(selectedPerson: person, updatedPerson: updatedPerson)
                             }
                         } label: {
                             Label("Edit", systemImage: "pencil")
@@ -63,7 +63,6 @@ struct PersonListView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal)
         }
         
     }
