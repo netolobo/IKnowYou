@@ -11,14 +11,12 @@ struct PersonDetailView: View {
     let viewModel : PersonDetailViewModel
     var body: some View {
         ZStack {
-            Image(uiImage: UIImage(data: viewModel.person.image)!)
-            
-            Text(viewModel.person.name)
-                .font(.title)
-                .foregroundStyle(.secondary)
-                .background(.thinMaterial)
-            
+            ImageData.from(data: viewModel.person.image)
+                .resizable()
+                .scaledToFit()
         }
+        .navigationTitle(viewModel.person.name)
+        .navigationBarTitleDisplayMode(.inline)
         .ignoresSafeArea()
     }
 }

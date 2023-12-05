@@ -12,13 +12,14 @@
 		5A0883E82B1BF4AB00758163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0883E72B1BF4AB00758163 /* Assets.xcassets */; };
 		5A0883EB2B1BF4AB00758163 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0883EA2B1BF4AB00758163 /* Preview Assets.xcassets */; };
 		5A0883F32B1BF52F00758163 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0883F22B1BF52F00758163 /* ImagePicker.swift */; };
-		5A0883F52B1C012800758163 /* AddNewPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0883F42B1C012800758163 /* AddNewPersonView.swift */; };
+		5A0883F52B1C012800758163 /* AddOrEditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0883F42B1C012800758163 /* AddOrEditPersonView.swift */; };
 		5A0883F82B1C096800758163 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0883F72B1C096800758163 /* Person.swift */; };
 		5A0883FB2B1C0A3100758163 /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0883FA2B1C0A3000758163 /* PersonListViewModel.swift */; };
 		5A08841C2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08841B2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift */; };
-		5A08841E2B1D301000758163 /* AddNewPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08841D2B1D301000758163 /* AddNewPersonViewModel.swift */; };
+		5A08841E2B1D301000758163 /* AddOrEditPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08841D2B1D301000758163 /* AddOrEditPersonViewModel.swift */; };
 		5A0884202B1D808700758163 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08841F2B1D808700758163 /* PersonDetailView.swift */; };
 		5A0884222B1D80A700758163 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0884212B1D80A700758163 /* PersonDetailViewModel.swift */; };
+		5A9333202B1E7D100094A2CF /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A93331F2B1E7D100094A2CF /* ImageData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,13 +29,14 @@
 		5A0883E72B1BF4AB00758163 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A0883EA2B1BF4AB00758163 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A0883F22B1BF52F00758163 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		5A0883F42B1C012800758163 /* AddNewPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonView.swift; sourceTree = "<group>"; };
+		5A0883F42B1C012800758163 /* AddOrEditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditPersonView.swift; sourceTree = "<group>"; };
 		5A0883F72B1C096800758163 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5A0883FA2B1C0A3000758163 /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
 		5A08841B2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+DocumentsDirectory.swift"; sourceTree = "<group>"; };
-		5A08841D2B1D301000758163 /* AddNewPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonViewModel.swift; sourceTree = "<group>"; };
+		5A08841D2B1D301000758163 /* AddOrEditPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditPersonViewModel.swift; sourceTree = "<group>"; };
 		5A08841F2B1D808700758163 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
 		5A0884212B1D80A700758163 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
+		5A93331F2B1E7D100094A2CF /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				5A0883F92B1C0A0100758163 /* ViewModel */,
 				5A0883E72B1BF4AB00758163 /* Assets.xcassets */,
 				5A08841A2B1D2A6300758163 /* Extension */,
+				5A9333212B1E7F9D0094A2CF /* Util */,
 				5A0883E92B1BF4AB00758163 /* Preview Content */,
 			);
 			path = IKnowYou;
@@ -91,7 +94,7 @@
 			children = (
 				5A0883E52B1BF4A900758163 /* PersonListView.swift */,
 				5A0883F22B1BF52F00758163 /* ImagePicker.swift */,
-				5A0883F42B1C012800758163 /* AddNewPersonView.swift */,
+				5A0883F42B1C012800758163 /* AddOrEditPersonView.swift */,
 				5A08841F2B1D808700758163 /* PersonDetailView.swift */,
 			);
 			path = View;
@@ -109,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				5A0883FA2B1C0A3000758163 /* PersonListViewModel.swift */,
-				5A08841D2B1D301000758163 /* AddNewPersonViewModel.swift */,
+				5A08841D2B1D301000758163 /* AddOrEditPersonViewModel.swift */,
 				5A0884212B1D80A700758163 /* PersonDetailViewModel.swift */,
 			);
 			path = ViewModel;
@@ -121,6 +124,14 @@
 				5A08841B2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A9333212B1E7F9D0094A2CF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5A93331F2B1E7D100094A2CF /* ImageData.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,10 +209,11 @@
 				5A08841C2B1D2A8A00758163 /* FileManager+DocumentsDirectory.swift in Sources */,
 				5A0883E62B1BF4A900758163 /* PersonListView.swift in Sources */,
 				5A0884202B1D808700758163 /* PersonDetailView.swift in Sources */,
-				5A08841E2B1D301000758163 /* AddNewPersonViewModel.swift in Sources */,
-				5A0883F52B1C012800758163 /* AddNewPersonView.swift in Sources */,
+				5A08841E2B1D301000758163 /* AddOrEditPersonViewModel.swift in Sources */,
+				5A0883F52B1C012800758163 /* AddOrEditPersonView.swift in Sources */,
 				5A0883E42B1BF4A900758163 /* IKnowYouApp.swift in Sources */,
 				5A0884222B1D80A700758163 /* PersonDetailViewModel.swift in Sources */,
+				5A9333202B1E7D100094A2CF /* ImageData.swift in Sources */,
 				5A0883FB2B1C0A3100758163 /* PersonListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

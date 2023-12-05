@@ -44,4 +44,9 @@ class PersonListViewModel {
         people.append(newPerson)
     }
     
+    func removePerson(person: Person) {
+        guard let index = people.firstIndex(of: person) else { return }
+        people.remove(at: index)
+    }
+    
 }

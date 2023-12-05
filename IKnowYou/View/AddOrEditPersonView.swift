@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-struct AddNewPersonView: View {
+struct AddOrEditPersonView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var viewModel = AddNewPersonViewModel()
-//    @Binding var people: [Person]
-//    @State var selectedPerson: Person?
+    @State var viewModel : AddOrEditPersonViewModel
     var saveClick: (Person) -> Void
     
     var body: some View {
@@ -23,10 +21,12 @@ struct AddNewPersonView: View {
             TextField("Type a name", text: $viewModel.personName)
             
             Button {
-                guard let selectedPerson = viewModel.updatePerson() else { return }
+               
+                if let person = viewModel.person {
+                    saveClick(person)
+                    dismiss()
+                }
                 
-                saveClick(selectedPerson)
-                dismiss()
                 
             } label: {
                 Text("Done")
@@ -37,36 +37,25 @@ struct AddNewPersonView: View {
                     .clipShape(Capsule())
             }
         }
+        .toolbar {
+            Button {
+                viewModel.showingImagePicker.toggle()
+            } label: {
+                Image(systemName: "photo.fill.on.rectangle.fill")
+            }
+            
+        }
         .onChange(of: viewModel.inputImage) { viewModel.loadImage() }
         .sheet(isPresented: $viewModel.showingImagePicker, content: {
             ImagePicker(image: $viewModel.inputImage)
         })
         .padding(.horizontal, 20)
     }
-    
-//    func addPerson(newPerson: Person) {
-//        guard let imageData = viewModel.inputImage?.jpegData(compressionQuality: 0.8) else {
-//            return
-//        }
-//        
-//        selectedPerson = Person(id: UUID(), name: viewModel.personName, image: imageData)
-//        
-////        people.append(newPerson)
-//    }
-    
-//    func updatePerson(person: Person) {
-//        guard let selectedPerson = viewModel.se else { return }
-//        
-//        if let index = people.firstIndex(of: selectedPerson) {
-//            people[index] = person
-//        }
-//    }
-    
 }
 
 #Preview {
     NavigationStack {
-        AddNewPersonView(saveClick: { _ in})
+        AddOrEditPersonView(viewModel: AddOrEditPersonViewModel(), saveClick: { _ in})
     }
     
 }
